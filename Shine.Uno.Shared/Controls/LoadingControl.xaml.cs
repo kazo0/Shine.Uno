@@ -12,20 +12,15 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Shine.Uno.Shared.ViewModels;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
 
-namespace Shine.Uno
+namespace Shine.Uno.Shared.Controls
 {
-	/// <summary>
-	/// An empty page that can be used on its own or navigated to within a Frame.
-	/// </summary>
-	public sealed partial class MainPage : Page
+	public sealed partial class LoadingControl : UserControl
 	{
-		public MainPage()
+		public LoadingControl()
 		{
-			DataContext = new WeatherViewModel();
 			this.InitializeComponent();
 		}
 	}

@@ -11,11 +11,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shine.Uno.iOS", "Shine.Uno.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shine.Uno.UWP", "Shine.Uno.UWP\Shine.Uno.UWP.csproj", "{5AD0C7D5-7980-4F20-A479-7F82BEC25901}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shine.Uno.Wasm", "Shine.Uno.Wasm\Shine.Uno.Wasm.csproj", "{02D179F6-FE8D-4198-94FE-82D0A395D107}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shine.Uno.Wasm", "Shine.Uno.Wasm\Shine.Uno.Wasm.csproj", "{02D179F6-FE8D-4198-94FE-82D0A395D107}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Shine.Uno.Shared\Shine.Uno.Shared.projitems*{07e586f9-6e43-4a00-8c5f-07dec658de94}*SharedItemsImports = 4
+		Shine.Uno.Shared\Shine.Uno.Shared.projitems*{5ad0c7d5-7980-4f20-a479-7f82bec25901}*SharedItemsImports = 4
 		Shine.Uno.Shared\Shine.Uno.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
+		Shine.Uno.Shared\Shine.Uno.Shared.projitems*{e30df8e1-1b40-4c4c-b16e-9bb173cbf905}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
