@@ -29,8 +29,6 @@ namespace Shine.Uno
 		/// </summary>
 		public App()
 		{
-			ConfigureFilters(Uno.Extensions.LogExtensionPoint.AmbientLoggerFactory);
-
 			this.InitializeComponent();
 			this.Suspending += OnSuspending;
 		}
