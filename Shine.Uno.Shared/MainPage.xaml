@@ -5,44 +5,47 @@
 	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	  xmlns:controls="using:Shine.Uno.Shared.Controls"
+	  xmlns:converters="using:Shine.Uno.Shared.Converters"
 	  mc:Ignorable="d">
+	<Page.Resources>
+		<converters:BoolToVisibilityConverter x:Key="boolToVisibilityConverter"/>
+		<converters:LongToDateTimeConverter x:Key="longToDateTimeConverter" />
+	</Page.Resources>
 
 	<Grid>
-		
-		<StackPanel Background="CornflowerBlue">
-			<Button Content="Get Weather"
-					HorizontalAlignment="Stretch"
-					Command="{Binding GetWeatherCommand}"
-					Margin="20" />
-			<TextBlock Text="{Binding WeatherStatus}"
-					   Margin="20"
-					   FontSize="30" />
-			<controls:WeatherItem Title="{Binding WeatherData[0].Title}"
-								  Content="{Binding WeatherData[0].Description}"
-								  Margin="20" />
-			<controls:WeatherItem Title="{Binding WeatherData[0].Title}"
-								  Content="{Binding WeatherData[0].Description}"
-								  Margin="20" />
-			<controls:WeatherItem Title="{Binding WeatherData[0].Title}"
-								  Content="{Binding WeatherData[0].Description}"
-								  Margin="20" />
-			<controls:WeatherItem Title="{Binding WeatherData[0].Title}"
-								  Content="{Binding WeatherData[0].Description}"
-								  Margin="20" />
-			<controls:WeatherItem Title="{Binding WeatherData[0].Title}"
-								  Content="{Binding WeatherData[0].Description}"
-								  Margin="20" />
-			<controls:WeatherItem Title="{Binding WeatherData[0].Title}"
-								  Content="{Binding WeatherData[0].Description}"
-								  Margin="20" />
-			<controls:WeatherItem Title="{Binding WeatherData[0].Title}"
-								  Content="{Binding WeatherData[0].Description}"
-								  Margin="20" />
-			<controls:WeatherItem Title="{Binding WeatherData[0].Title}"
-								  Content="{Binding WeatherData[0].Description}"
-								  Margin="20" />
-		</StackPanel>
-		<controls:LoadingControl />
+		<ScrollViewer>
+			<StackPanel>
+				<Button Content="Get Weather"
+						HorizontalAlignment="Stretch"
+						Command="{Binding GetWeatherCommand}"
+						Margin="20" />
+				<TextBlock Text="{Binding WeatherData.Weather[0].Description}"
+						   Margin="20"
+						   FontSize="30" />
+				<controls:WeatherItem Title="Location"
+									  Content="{Binding WeatherData.Title}"
+									  Margin="20" />
+				<controls:WeatherItem Title="Temperature"
+									  Content="{Binding WeatherData.Main.Temperature}"
+									  Margin="20" />
+				<controls:WeatherItem Title="Wind Speed"
+									  Content="{Binding WeatherData.Wind.Speed}"
+									  Margin="20" />
+				<controls:WeatherItem Title="Humidity"
+									  Content="{Binding WeatherData.Main.Humidity}"
+									  Margin="20" />
+				<controls:WeatherItem Title="Visibility"
+									  Content="{Binding WeatherData.Weather[0].Visibility}"
+									  Margin="20" />
+				<controls:WeatherItem Title="Time of Sunrise"
+									  Content="{Binding WeatherData.Sys.Sunrise, Converter={StaticResource longToDateTimeConverter}}"
+									  Margin="20" />
+				<controls:WeatherItem Title="Time of Sunset"
+									  Content="{Binding WeatherData.Sys.Sunset, Converter={StaticResource longToDateTimeConverter}}"
+									  Margin="20" />
+			</StackPanel>
+		</ScrollViewer>
+		<controls:LoadingControl Visibility="{Binding IsBusy, Converter={StaticResource boolToVisibilityConverter}}"/>
 	</Grid>
 
 </Page>
