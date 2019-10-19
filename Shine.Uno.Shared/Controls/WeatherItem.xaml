@@ -7,11 +7,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     d:DesignHeight="300"
-    d:DesignWidth="400">
+    d:DesignWidth="400"
+    x:Name="WeatherItemControl">
 
-    <StackPanel Background="Red"
-                Height="Auto">
-		<TextBlock Text="{Binding Title}" Foreground="Beige"/>
-		<TextBlock Text="{Binding Content}" Foreground="Black" Margin="20,0,0,0"/>
+    <StackPanel Height="Auto">
+		<TextBlock Text="{Binding Title, ElementName=WeatherItemControl}" Foreground="DarkSlateGray"/>
+		<TextBlock Text="{Binding Content, ElementName=WeatherItemControl}" Foreground="Black" Margin="20,0,0,0"/>
     </StackPanel>
 </UserControl>

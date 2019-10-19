@@ -34,7 +34,7 @@ namespace Shine.Uno.Shared.Controls
 
 		// Using a DependencyProperty as the backing store for Title.  This enables animation, styling, binding, etc...
 		public static readonly DependencyProperty TitleProperty =
-			DependencyProperty.Register("Title", typeof(string), typeof(WeatherItem), new PropertyMetadata(0));
+			DependencyProperty.Register("Title", typeof(string), typeof(WeatherItem), new PropertyMetadata(null));
 
 
 
@@ -46,7 +46,7 @@ namespace Shine.Uno.Shared.Controls
 
 		// Using a DependencyProperty as the backing store for Content.  This enables animation, styling, binding, etc...
 		public static readonly DependencyProperty ContentProperty =
-			DependencyProperty.Register("Content", typeof(string), typeof(WeatherItem), new PropertyMetadata(0));
+			DependencyProperty.Register("Content", typeof(string), typeof(WeatherItem), new PropertyMetadata(null));
 
 
 	}
