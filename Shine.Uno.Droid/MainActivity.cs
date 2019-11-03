@@ -13,6 +13,12 @@ namespace Shine.Uno.Droid
 		)]
 	public class MainActivity : Windows.UI.Xaml.ApplicationActivity
 	{
+		protected override void OnCreate(Bundle bundle)
+		{
+			base.OnCreate(bundle);
+			Xamarin.Essentials.Platform.Init(this, bundle);
+		}
 	}
+
 }
 

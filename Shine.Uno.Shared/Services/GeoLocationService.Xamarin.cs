@@ -1,11 +1,6 @@
-﻿#if __IOS__
+﻿#if __ANDROID__ || __IOS__ 
 using System.Threading.Tasks;
 using Shine.Uno.Shared.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using AuthenticationServices;
-using CoreLocation;
 using Xamarin.Essentials;
 
 namespace Shine.Uno.Shared.Services
