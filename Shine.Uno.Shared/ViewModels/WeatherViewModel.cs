@@ -9,6 +9,7 @@ using GalaSoft.MvvmLight.Command;
 using Newtonsoft.Json;
 using Shine.Models;
 using Shine.Uno.Shared.Services;
+using Shine.Uno.Shared.Models;
 
 namespace Shine.Uno.Shared.ViewModels
 {
@@ -19,7 +20,9 @@ namespace Shine.Uno.Shared.ViewModels
 		public WeatherViewModel()
 		{
 			GetWeatherCommand = new RelayCommand(async () => await GetWeather());
+#if WINDOWS_UWP || __IOS__ || __ANDROID__
 			_geoLocationService = new GeoLocationService();
+#endif
 		}
 
 		private bool _isBusy;
@@ -43,8 +46,16 @@ namespace Shine.Uno.Shared.ViewModels
 		{
 			IsBusy = true;
 			var client = new HttpClient();
-			var geoLocation = await _geoLocationService.GetLocation();
+#if WINDOWS_UWP || __IOS__ || __ANDROID__
 
+			var geoLocation = await _geoLocationService.GetLocation();
+#else
+			var geoLocation = new GeoLocation 
+			{
+				Longitude = 120d,
+				Latitude = -72d
+			};
+#endif
 			if (geoLocation == null)
 			{
 				return;
