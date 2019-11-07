@@ -61,7 +61,7 @@ namespace Shine.Uno.Shared.ViewModels
 				return;
 			}
 
-			var uri = $"https://api.openweathermap.org/data/2.5/weather?lat={geoLocation.Latitude}&lon={geoLocation.Longitude}&units=imperial&APPID=YOUR_APP_ID";
+			var uri = $"https://api.openweathermap.org/data/2.5/weather?lat={geoLocation.Latitude}&lon={geoLocation.Longitude}&units=imperial&APPID=013f29f2212630fc88f7e3557b16973e";
 
 			var response = await client.GetAsync(uri);
 			if (response.IsSuccessStatusCode)

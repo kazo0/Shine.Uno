@@ -21,6 +21,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controls\LoadingControl.xaml.cs">
       <DependentUpon>LoadingControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ShineUserControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\WeatherItem.xaml.cs">
+      <DependentUpon>WeatherItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\LongToDateTimeConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
@@ -35,6 +39,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)Controls\LoadingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\WeatherItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

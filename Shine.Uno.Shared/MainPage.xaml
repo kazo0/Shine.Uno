@@ -22,27 +22,27 @@
 				<TextBlock Text="{Binding WeatherData.Weather[0].Description}"
 						   Margin="20"
 						   FontSize="30" />
-				<TextBlock Text="Location" />
-				<TextBlock Text="{Binding WeatherData.Title}"
-						   Margin="20,0,0,0" />
-				<TextBlock Text="Temperature" />
-				<TextBlock Text="{Binding WeatherData.Main.Temperature}"
-				           Margin="20,0,0,0" />
-				<TextBlock Text="Wind Speed" />
-				<TextBlock Text="{Binding WeatherData.Wind.Speed}"
-				           Margin="20,0,0,0" />
-				<TextBlock Text="Humidity" />
-				<TextBlock Text="{Binding WeatherData.Main.Humidity}"
-				           Margin="20,0,0,0" />
-				<TextBlock Text="Visibility" />
-				<TextBlock Text="{Binding WeatherData.Weather[0].Visibility}"
-				           Margin="20,0,0,0" />
-				<TextBlock Text="Time of Sunrise" />
-				<TextBlock Text="{Binding WeatherData.Sys.Sunrise, Converter={StaticResource longToDateTimeConverter}}"
-				           Margin="20,0,0,0" />
-				<TextBlock Text="Time of Sunset" />
-				<TextBlock Text="{Binding WeatherData.Sys.Sunset, Converter={StaticResource longToDateTimeConverter}}"
-				           Margin="20,0,0,0" />
+				<controls:WeatherItem Title="Location"
+				                      Description="{Binding WeatherData.Title}"
+				                      Margin="20" />
+				<controls:WeatherItem Title="Temperature"
+				                      Description="{Binding WeatherData.Main.Temperature}"
+				                      Margin="20" />
+				<controls:WeatherItem Title="Wind Speed"
+				                      Description="{Binding WeatherData.Wind.Speed}"
+				                      Margin="20" />
+				<controls:WeatherItem Title="Humidity"
+				                      Description="{Binding WeatherData.Main.Humidity}"
+				                      Margin="20" />
+				<controls:WeatherItem Title="Visibility"
+				                      Description="{Binding WeatherData.Weather[0].Visibility}"
+				                      Margin="20" />
+				<controls:WeatherItem Title="Time of Sunrise"
+				                      Description="{Binding WeatherData.Sys.Sunrise, Converter={StaticResource longToDateTimeConverter}}"
+				                      Margin="20" />
+				<controls:WeatherItem Title="Time of Sunset"
+				                      Description="{Binding WeatherData.Sys.Sunset, Converter={StaticResource longToDateTimeConverter}}"
+				                      Margin="20" />
 			</StackPanel>
 		</ScrollViewer>
 		<controls:LoadingControl Visibility="{Binding IsBusy, Converter={StaticResource boolToVisibilityConverter}}"/>
