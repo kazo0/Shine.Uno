@@ -6,47 +6,48 @@
 	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	  xmlns:controls="using:Shine.Uno.Shared.Controls"
 	  xmlns:converters="using:Shine.Uno.Shared.Converters"
-	  mc:Ignorable="d">
+	  xmlns:ios="http://uno.ui/ios"
+	  mc:Ignorable="d ios">
 	<Page.Resources>
 		<converters:BoolToVisibilityConverter x:Key="boolToVisibilityConverter"/>
 		<converters:LongToDateTimeConverter x:Key="longToDateTimeConverter" />
 	</Page.Resources>
-
-	<Grid>
-		<ScrollViewer>
-			<StackPanel>
-				<Button Content="Get Weather"
-						HorizontalAlignment="Stretch"
-						Command="{Binding GetWeatherCommand}"
-						Margin="20" />
-				<TextBlock Text="{Binding WeatherData.Weather[0].Description}"
-						   Margin="20"
-						   FontSize="30" />
-				<controls:WeatherItem Title="Location"
-				                      Description="{Binding WeatherData.Title}"
-				                      Margin="20" />
-				<controls:WeatherItem Title="Temperature"
-				                      Description="{Binding WeatherData.Main.Temperature}"
-				                      Margin="20" />
-				<controls:WeatherItem Title="Wind Speed"
-				                      Description="{Binding WeatherData.Wind.Speed}"
-				                      Margin="20" />
-				<controls:WeatherItem Title="Humidity"
-				                      Description="{Binding WeatherData.Main.Humidity}"
-				                      Margin="20" />
-				<controls:WeatherItem Title="Visibility"
-				                      Description="{Binding WeatherData.Weather[0].Visibility}"
-				                      Margin="20" />
-				<controls:WeatherItem Title="Time of Sunrise"
-				                      Description="{Binding WeatherData.Sys.Sunrise, Converter={StaticResource longToDateTimeConverter}}"
-				                      Margin="20" />
-				<controls:WeatherItem Title="Time of Sunset"
-				                      Description="{Binding WeatherData.Sys.Sunset, Converter={StaticResource longToDateTimeConverter}}"
-				                      Margin="20" />
-			</StackPanel>
-		</ScrollViewer>
-		<controls:LoadingControl Visibility="{Binding IsBusy, Converter={StaticResource boolToVisibilityConverter}}"/>
-	</Grid>
-
+	<ios:Grid Margin="0,30,0,0">
+		<Grid>
+			<ScrollViewer>
+				<StackPanel>
+					<Button Content="Get Weather"
+							HorizontalAlignment="Stretch"
+							Command="{Binding GetWeatherCommand}"
+							Margin="20" />
+					<TextBlock Text="{Binding WeatherData.Weather[0].Description}"
+							   Margin="20"
+							   FontSize="30" />
+					<controls:WeatherItem Title="Location"
+										  Description="{Binding WeatherData.Title}"
+										  Margin="20" />
+					<controls:WeatherItem Title="Temperature"
+										  Description="{Binding WeatherData.Main.Temperature}"
+										  Margin="20" />
+					<controls:WeatherItem Title="Wind Speed"
+										  Description="{Binding WeatherData.Wind.Speed}"
+										  Margin="20" />
+					<controls:WeatherItem Title="Humidity"
+										  Description="{Binding WeatherData.Main.Humidity}"
+										  Margin="20" />
+					<controls:WeatherItem Title="Visibility"
+										  Description="{Binding WeatherData.Weather[0].Visibility}"
+										  Margin="20" />
+					<controls:WeatherItem Title="Time of Sunrise"
+										  Description="{Binding WeatherData.Sys.Sunrise, Converter={StaticResource longToDateTimeConverter}}"
+										  Margin="20" />
+					<controls:WeatherItem Title="Time of Sunset"
+										  Description="{Binding WeatherData.Sys.Sunset, Converter={StaticResource longToDateTimeConverter}}"
+										  Margin="20" />
+				</StackPanel>
+			</ScrollViewer>
+			<controls:LoadingControl Visibility="{Binding IsBusy, Converter={StaticResource boolToVisibilityConverter}}"/>
+		</Grid>
+	</ios:Grid>
 </Page>
 
